@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NguGame.Views.RightAnswer"
+             BackgroundColor="DeepSkyBlue"
+             >
+    <ContentPage.ToolbarItems >
+        <ToolbarItem  Text="Logout"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" 
+                 Padding="20" 
+                 VerticalOptions="Center"
+                 Spacing="30"
+                >
+            <StackLayout >
+                <StackLayout BackgroundColor="#F9CC76" Padding="10">
+                    <Label Text="Cảm ơn bạn nhiều nha :) Mình cũng yêu bạn ý =))" 
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        TextColor="Black"
+                          HeightRequest="120"
+                   />
+                </StackLayout>
+
+                    <Image HorizontalOptions="Center"
+                   Source="smileyEmoticon.png"/>
+
+                <Button 
+                        BackgroundColor="Red"
+                        BorderRadius="30"
+                        Text="HỎI TIẾP ĐI >>"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                    FontSize="20"
+                        />
+            </StackLayout>
+            <Label Text="Mẹo: đánh giá game này 5 sao để bọn mình làm game này tốt hơn nữa"
+                   TextColor="White"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   Margin="20"
+                   />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

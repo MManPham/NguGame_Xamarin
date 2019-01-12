@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NguGame.Views.GameView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="answerButton" TargetType="Button">
+                <Setter Property="FontSize" Value="17"/>
+                <Setter Property="TextColor" Value="OrangeRed" />
+                <Setter Property="BackgroundColor" Value="White"/>
+                <Setter Property="BorderRadius" Value="10" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="2" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+            <Grid x:Name="controlGrid" RowSpacing="1" 
+              ColumnSpacing="1" 
+              BackgroundColor="DeepSkyBlue"
+              Padding="5"
+              VerticalOptions="Center">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="3*"  />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+                <RowDefinition Height="2*" />
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <StackLayout Orientation ="Horizontal"
+                         Grid.Row="0" Grid.ColumnSpan="2"
+                         HorizontalOptions="Center"
+                         
+                         >
+                <Label FontAttributes="Bold" Text="0"  FontSize="35" x:Name="Point" TextColor="white"/>
+                <Label Text="ĐIỂM" FontSize="35" FontAttributes="Bold" TextColor="white"/>
+            </StackLayout>
+            <StackLayout Orientation ="Horizontal"
+                         Grid.Row="1" Grid.ColumnSpan="2"
+                         HorizontalOptions="Center"
+                         >
+                <Label FontAttributes="Bold" Text="Lượt có thể ngu: " FontSize="25" />
+                <Label Text="3" FontSize="25" FontAttributes=   "Bold" />
+            </StackLayout>
+
+            <StackLayout
+                Grid.Row="2"
+                Grid.ColumnSpan="2"
+                Margin="10"
+                VerticalOptions="Center"
+                BackgroundColor="#F9CC76"
+                Padding="10"
+                >
+                <Label Text="Câu 1:" FontSize="17"  FontAttributes="Bold" TextColor="black"/>
+                <Label Text="I Love You có nghĩa là gì?" 
+                   FontSize="18"
+                   HorizontalTextAlignment="Start"
+                   TextColor="Black"
+                   Margin="5"
+                   />
+            </StackLayout>
+
+            <Image Grid.Column="0" Grid.Row="3" 
+                   Source="lookDown.png" />
+            <StackLayout Grid.Column="1" Grid.Row="3"
+                         HorizontalOptions="End"
+                         Margin="10"
+                         VerticalOptions="Start"
+                         Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Đăng bởi:" 
+                       FontSize="15"
+                       FontAttributes="Bold"
+                       />
+
+                    <Label Text="Admin" x:Name="author"
+                       FontSize="15" 
+                       FontAttributes="Bold"
+                           TextColor="black"
+                       />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Câu 1" FontSize="15"  FontAttributes="Bold" TextColor="black"/>
+                    <Label Text="/100"  
+                       FontSize="15"
+                       FontAttributes="Bold"
+                           
+                       />
+                </StackLayout>
+            </StackLayout>
+            <Button Grid.Row="4" Grid.Column="0" Text="Tôi yêu bạn" FontSize="17"
+                    Style="{StaticResource answerButton}"/>
+            <Button Grid.Row="5" Grid.Column="0" Text="Tao yêu mày"
+                    Style="{StaticResource answerButton}"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="Tớ yêu cậu"
+                    Style="{StaticResource answerButton}"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="I love U"
+                    Style="{StaticResource answerButton}" 
+                   />
+        </Grid>
+
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,17 @@
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\bin\Debug\netstandard2.0\NguGame.deps.json
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\bin\Debug\netstandard2.0\NguGame.dll
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\bin\Debug\netstandard2.0\NguGame.pdb
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\NguGame.csprojAssemblyReference.cache
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\NguGame.csproj.CoreCompileInputs.cache
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\NguGame.AssemblyInfoInputs.cache
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\NguGame.AssemblyInfo.cs
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\NguGame.dll
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\NguGame.pdb
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\Views\GameView.xaml.g.cs
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\NguGame.AssemblyMetadataInputs.cache
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\NguGame.AssemblyMetadata.cs
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\Views\RightAnswer.xaml.g.cs
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\manph\OneDrive\Desktop\NguGame\NguGame\NguGame\bin\Debug\netstandard2.0\credentials.json

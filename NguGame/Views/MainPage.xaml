@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NguGame.Views.MainPage"
+             >
+    <ContentPage.ToolbarItems >
+        <ToolbarItem  Text="Logout"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" 
+                 Padding="30" 
+                 BackgroundColor="DeepSkyBlue"
+                >
+            <StackLayout BackgroundColor="#F9CC76"
+                         Padding="20">
+                <Label Text="HỎI NGU!" 
+                   FontSize="60"
+                   HorizontalTextAlignment="Center"
+                   TextColor="Black"
+                   />
+            </StackLayout>
+   
+            <Image HorizontalOptions="Center"
+                   Source="smileyEmoticon.png"/>
+
+            <StackLayout
+                Orientation="Vertical"
+                Spacing="10"
+                 Margin="30">
+                <Button
+                    Text="Chơi Game"
+                    Command="{Binding NewGameCmd}"
+                    FontSize="33"
+                    TextColor="OrangeRed"
+                    BackgroundColor="White"
+                    BorderRadius="30"
+                    FontAttributes="Bold"
+                    x:Name="playGame"
+                    Clicked="PlayGame_Clicked"  
+                    />
+                <StackLayout Margin="20">
+                <Button
+                    Text="Thông Tin Game"
+                    FontSize="Medium"
+                    Command="{Binding AboutCmd}" 
+                    TextColor="OrangeRed"
+                    BackgroundColor="White"
+                    BorderRadius="30"
+                    FontAttributes="Bold"
+                    
+                    />
+                <Button
+                    Text="Bảng xếp hạng"
+                    FontSize="Medium"
+                    Command="{Binding  TopScoreCmd}"
+                    TextColor="OrangeRed"
+                    BackgroundColor="White"
+                    BorderRadius="30"
+                    FontAttributes="Bold"
+                    
+                    />
+
+                <Button
+                    Text="Thêm Câu Hỏi"
+                    FontSize="Medium"
+                    Command="{Binding AboutCmd}" 
+                    TextColor="OrangeRed"
+                    BackgroundColor="White"
+                    BorderRadius="30"
+                    FontAttributes="Bold"
+                    />
+                
+            </StackLayout>
+            </StackLayout>
+        </StackLayout>
+
+    </ContentPage.Content>
+</ContentPage>
