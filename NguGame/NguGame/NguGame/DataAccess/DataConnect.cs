@@ -47,7 +47,7 @@ namespace NguGame.DataAccess
             string settingsPath = Path.Combine(path, "settings.xml");
             StreamWriter stream2 = File.CreateText(settingsPath);
             using (var stream =
-                new FileStream("redentials.json", FileMode.Open, FileAccess.Read))
+                new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
             {
                 string credPath = System.Environment.GetFolderPath(
                     System.Environment.SpecialFolder.Personal);

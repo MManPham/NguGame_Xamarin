@@ -19,6 +19,8 @@ namespace NguGame
 
             InitializeComponent();
 
+            DataConnect test = new DataConnect();
+            test.ListGoogleSheetValue();
 
             MainPage = new NavigationPage(new MainPage());
 
