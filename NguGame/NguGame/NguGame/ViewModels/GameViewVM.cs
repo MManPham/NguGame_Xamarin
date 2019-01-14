@@ -56,6 +56,17 @@ namespace NguGame.ViewModels
             }
         }
 
+        private int _numQsPass;
+        public int NumbQuestPas
+        {
+            get { return _numQsPass; }
+            set
+            {
+                _numQsPass = value;
+                OnPropertyChanged();
+            }
+        }
+
         private ShowQuestion _showQ;
         public ShowQuestion ShowQ
         {
@@ -74,7 +85,7 @@ namespace NguGame.ViewModels
             setShowAnswer();
             LuotNgu = 3;
             Score = 0;
-
+            NumbQuestPas = 50 - LQuestion.Count + 1;
             MessagingCenter.Subscribe<GameView, string>(this, "RightAnswer",  (obj, nameAnswer) =>
             {
                 rightAnswer(lqs);
@@ -131,12 +142,13 @@ namespace NguGame.ViewModels
             this.LQuestion = lqs;
             GetRandomQuestion();
             ShowQ = setShowAnswer();
+            NumbQuestPas = 50 - LQuestion.Count+1;
         }
         public async  void WrongAnswer(ObservableCollection<Question> lqs)
         {
-            if (LuotNgu == 2)
+            if (LuotNgu == 1)
             {
-                await Application.Current.MainPage.Navigation.PushAsync(new GameOver());
+                await Application.Current.MainPage.Navigation.PushAsync(new GameOver(this.Score));
 
             }
             LuotNgu--;
@@ -144,6 +156,7 @@ namespace NguGame.ViewModels
             this.LQuestion = lqs;
             GetRandomQuestion();
             ShowQ = setShowAnswer();
+            NumbQuestPas = 50 - LQuestion.Count + 1;
         }
 
         private Task LoadPage(ObservableCollection<Question> lqs)

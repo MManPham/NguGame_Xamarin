@@ -14,13 +14,13 @@ namespace NguGame.Services
         public User_MKStore()
         {
             client = new UserHttpRest();
-            URL = "http://192.168.100.25:3000/user";
+            URL = "http://192.168.100.25:3000";
         }
         public async Task<bool> AddUser(User item)
         {
             try
             {
-                await client.PostUse(URL, item);
+                await client.PostUse(URL + "/user/", item);
 
             }
             catch (Exception)
@@ -32,17 +32,46 @@ namespace NguGame.Services
 
         public async Task<User> GetUserAsync(string user_name)
         {
-            this.URL = this.URL + "/" + user_name;
-            return await client.GetUser<User>(URL);
+            this.URL = this.URL + "/user/" + user_name;
+            return await client.GetUserbyName<User>(URL);
 
         }
         public async Task<List<User>> GetAllUserAsync(bool forceRefresh = false)
         {
-            List<User> User = await client.GetALLUser<User>(this.URL);
+            List<User> User = await client.GetALLUser<User>(this.URL + "/user");
             return User;
 
         }
 
+        public async Task<User> CheckDeviceAsync(string nameDevice)
+        {
+            this.URL = this.URL + "/userDevice/" + nameDevice;
 
+            try
+            {
+               return await client.CheckDevice<User>(URL);
+
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
+
+        public async Task<User> UpdateUser(User item)
+        {
+            this.URL = this.URL + "/userDevice/" + item.nameDivice;
+
+            try
+            {
+                return await client.UpdateUser<User>(URL,item);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+
+        }
     }
 }

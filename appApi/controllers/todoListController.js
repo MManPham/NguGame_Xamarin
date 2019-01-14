@@ -37,11 +37,27 @@ exports.insertUser = (req,res)=>{
 }
 
 exports.findUserByName = (req,res)=>{
-    var user = req.params.user_name;
+    var id = req.params.user_id;
     User.find(
-        {nameUser:user},(err,user) =>{
+        {_id:id},(err,user) =>{
             if(err) throw err;
             else res.json(user);
         });
 }
 
+exports.findDevice = (req,res)=>{
+    var nameDivice = req.params.user_device;
+    User.find(
+        {nameDivice:nameDivice},(err,user) =>{
+            if(err) throw err;
+            else res.json(user);
+        });
+}
+
+exports.update_User = (req, res) =>{
+    User.findOneAndUpdate({nameDivice: req.params.user_device}, req.body, {new: true},(err, user)=> {
+        if (err)
+          res.send(err);
+        res.json(user);
+      });
+}

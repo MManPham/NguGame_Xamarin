@@ -32,9 +32,11 @@ namespace NguGame.Views
             
             if (answerA.Text != ViewModel.currQuestion.rightAnswer)
             {
-               await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
                 MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
-
+                if(ViewModel.LuotNgu>1)
+                {
+                    await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                }
             }
             else
             {
@@ -49,9 +51,12 @@ namespace NguGame.Views
         {
             if (answerB.Text != ViewModel.currQuestion.rightAnswer)
             {
-                await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                if (ViewModel.LuotNgu > 1)
+                {
+                    await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                }
                 MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
-
+       
             }
             else
             {
@@ -65,9 +70,12 @@ namespace NguGame.Views
         {
             if (answerC.Text != ViewModel.currQuestion.rightAnswer)
             {
-                await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                if (ViewModel.LuotNgu > 1)
+                {
+                    await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                }
                 MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
-
+            
             }
             else
             {
@@ -81,9 +89,12 @@ namespace NguGame.Views
         {
             if (answerD.Text != ViewModel.currQuestion.rightAnswer)
             {
-                await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                if (ViewModel.LuotNgu > 1)
+                {
+                    await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                }
                 MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
-
+         
             }
             else
             {

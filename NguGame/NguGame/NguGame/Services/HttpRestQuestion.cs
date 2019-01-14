@@ -1,7 +1,9 @@
 ﻿using Newtonsoft.Json;
+using NguGame.Models;
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Threading.Tasks;
 
 namespace NguGame.Services
@@ -37,6 +39,30 @@ namespace NguGame.Services
                 }
             }
             return default(List<T>);
+        }
+
+        public async Task PostQuestion(string URL, Question question_post)
+        {
+            if (NetworkCheck.IsInternet())
+            {
+                try
+                {
+                    HttpClient client = new HttpClient();
+                    var json = JsonConvert.SerializeObject(question_post);
+
+                    HttpContent content = new StringContent(json);
+
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    HttpResponseMessage res = await client.PostAsync(URL, content);
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
         }
     }
 }

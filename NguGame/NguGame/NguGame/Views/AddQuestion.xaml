@@ -17,19 +17,19 @@
                     </Label.Text>
                 </Label>
                 <Label Text="Nick-name của bạn?" FontSize="18" TextColor="Black"/>
-                <Entry x:Name="author" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Entry x:Name="author" Text="{Binding AddQuestion.author}" Placeholder="Câu trả lời của bạn" FontSize="16" />
                 <Label Text="Nhập nội dung câu đố" FontSize="18" TextColor="Black"/>
-                <Entry x:Name="nameQuestion" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Entry x:Name="nameQuestion" Text="{Binding AddQuestion.nameQuestion}" Placeholder="Câu trả lời của bạn" FontSize="16" />
                 <Label Text="Nhập đáp án Đúng" FontSize="18" TextColor="Black"/>
-                <Entry x:Name="rightAnswer" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Entry x:Name="rightAnswer" Text="{Binding AddQuestion.rightAnswer}" Placeholder="Câu trả lời của bạn" FontSize="16" />
                 <Label Text="Đáp án Sai-1" FontSize="18" TextColor="Black"/>
-                <Entry x:Name="wrongAnswer1" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Entry x:Name="wrongAnswer1" Text="{Binding AddQuestion.wrongAnswer1}" Placeholder="Câu trả lời của bạn" FontSize="16" />
                 <Label Text="Đáp án Sai-2" FontSize="18" TextColor="Black"/>
-                <Entry x:Name="wrongAnswer2" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Entry x:Name="wrongAnswer2" Text="{Binding AddQuestion.wrongAnswer2}" Placeholder="Câu trả lời của bạn" FontSize="16" />
                 <Label Text="Đáp án Sai-3" FontSize="18" TextColor="Black"/>
-                <Entry x:Name="wrongAnswer3" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Entry x:Name="wrongAnswer3" Text="{Binding AddQuestion.wrongAnswer3}" Placeholder="Câu trả lời của bạn" FontSize="16" />
                 <Label Text="Cần lời giải thích" FontSize="18" TextColor="Black"/>
-                <Entry x:Name="explain" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Entry x:Name="explain" Text="{Binding AddQuestion.explain}" Placeholder="Câu trả lời của bạn" FontSize="16" />
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition Height="40"/>
@@ -38,10 +38,12 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="2*"/>
                     </Grid.ColumnDefinitions>
-                    <Button x:Name="cmdsubmit" Text="Gửi câu hỏi" VerticalOptions="Start"
-                    HorizontalOptions="Start" Clicked="Cmdsubmit_Clicked" Grid.Column="0" Grid.Row="0"/>
-                    <Button x:Name="cmdbackhome" Text="Trở về" VerticalOptions="End"
-                    HorizontalOptions="End" Clicked="Cmdbackhome_Clicked" Grid.Column="1" Grid.Row="0"/>
+                    <Button x:Name="cmdsubmit" Text="Gửi câu hỏi"
+                            Command="{Binding AddQuestionCommand}"
+                            VerticalOptions="Start" BackgroundColor="DeepSkyBlue"  TextColor="White"
+                            HorizontalOptions="Start" Clicked="Cmdsubmit_Clicked" Grid.Column="0" Grid.Row="0"/>
+                    <Button x:Name="cmdbackhome" Text="Trở về" VerticalOptions="End"  BackgroundColor="DeepSkyBlue"
+                            HorizontalOptions="End" Clicked="Cmdbackhome_Clicked" Grid.Column="1" Grid.Row="0"/>
                 </Grid>
 
             </StackLayout>

@@ -13,10 +13,16 @@ namespace NguGame.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class GameOver : ContentPage
 	{
-		public GameOver ()
+		public GameOver (int Score)
 		{
 			InitializeComponent ();
-            BindingContext = new OutGameVM();
+            BindingContext = new OutGameVM( Score);
 		}
-	}
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+          
+        }
+    }
 }

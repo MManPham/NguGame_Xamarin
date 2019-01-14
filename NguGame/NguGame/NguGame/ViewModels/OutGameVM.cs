@@ -1,8 +1,10 @@
-﻿using Xamarin.Forms;
+﻿using NguGame.Models;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace NguGame.ViewModels
 {
-    public class OutGameVM
+    public class OutGameVM:BasicViewModel
     {
         public Command MakeNewGame
         {
@@ -12,7 +14,7 @@ namespace NguGame.ViewModels
         {
             get; set;
         }
-        public OutGameVM()
+        public OutGameVM(int UScore)
         {
             MakeNewGame = new Command(() =>
           {
@@ -24,6 +26,15 @@ namespace NguGame.ViewModels
                 await Application.Current.MainPage.Navigation.PopToRootAsync();
 
             });
+
+
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                User upUser = await User_DataStore.CheckDeviceAsync(DeviceInfo.Model);
+                upUser.score = UScore;
+                await User_DataStore.UpdateUser(upUser);
+            });
+
         }
     }
 }

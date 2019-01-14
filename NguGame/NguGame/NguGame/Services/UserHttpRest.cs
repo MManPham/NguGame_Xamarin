@@ -10,7 +10,33 @@ namespace NguGame.Services
 {
     public class UserHttpRest
     {
-        public async Task<T> GetUser<T>(string URL)
+        public async Task<T> GetUserbyName<T>(string URL)
+        {
+            if (NetworkCheck.IsInternet())
+            {
+                try
+                {
+                    HttpClient client = new HttpClient();
+                    client.MaxResponseContentBufferSize = 256000;
+                    string res = await client.GetStringAsync(URL);
+                    if (res != "")
+                    {
+                        List<T> uls = JsonConvert.DeserializeObject<List<T>>(res);
+                        return uls[0];
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return default(T);
+        }
+
+
+
+
+        public async Task<T> CheckDevice<T>(string URL)
         {
             if (NetworkCheck.IsInternet())
             {
@@ -91,6 +117,30 @@ namespace NguGame.Services
             }
         }
 
+        public async Task<T> UpdateUser<T>(string URL, User user_put)
+        {
+            if (NetworkCheck.IsInternet())
+            {
+                try
+                {
+                    HttpClient client = new HttpClient();
+                    client.MaxResponseContentBufferSize = 256000;
 
+                    var json = JsonConvert.SerializeObject(user_put);
+
+                    HttpContent content = new StringContent(json);
+
+                    content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+                    HttpResponseMessage res = await client.PutAsync(URL, content);
+                 
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+            }
+            return default(T);
+        }
     }
 }

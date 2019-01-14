@@ -1,0 +1,23 @@
+﻿<?xaml version="1.0" encoding="UTF-8"?>
+<page:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NguGame.Views.AddUserPopup"
+             xmlns:page="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    <StackLayout Margin="20"
+                 Padding="20"
+                 BackgroundColor="White"
+                 VerticalOptions="Center"
+                 Spacing="15">
+
+        <Label Text=" Member Ngu mới là: "
+               FontSize="25"/>
+            <Entry FontSize="25" x:Name="nameUser"
+                   />
+        <Button BackgroundColor="DodgerBlue"
+                FontSize="20"
+                Text="THAM GIA HỘI NGU"
+                TextColor="White" 
+                x:Name="addUser"
+                Clicked="AddUser_Clicked"/>
+    </StackLayout>  
+</page:PopupPage>

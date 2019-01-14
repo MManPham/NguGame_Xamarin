@@ -1,13 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Xamarin.Forms;
-using NguGame.Models;
+﻿using NguGame.Models;
 using NguGame.Views;
-using System.Threading.Tasks;
+using Rg.Plugins.Popup.Services;
+using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Threading.Tasks;
+using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace NguGame.ViewModels
 {
@@ -17,12 +18,28 @@ namespace NguGame.ViewModels
         public static void Sort<TSource, TKey>(this ObservableCollection<TSource> collection, Func<TSource, TKey> keySelector)
         {
             List<TSource> sorted = collection.OrderBy(keySelector).ToList();
-            for (int i = 0; i < sorted.Count(); i++)
-                collection.Move(collection.IndexOf(sorted[i]), i);
+            int j = 0;
+            for (int i = sorted.Count() - 1; i >= 0; i--)
+            {
+                collection.Move(collection.IndexOf(sorted[i]), j);
+                j++;
+            }
         }
     }
-    public class MainPageVM:BasicViewModel
+    public class MainPageVM : BasicViewModel
     {
+        ObservableCollection<User> _luser = new ObservableCollection<User>();
+
+        private Question _user;
+        public Question User
+        {
+            get { return _user; }
+            set
+            {
+                _user = value;
+                OnPropertyChanged();
+            }
+        }
 
         public Command NewGameCmd { get; set; }
         public Command TopScoreCmd { get; set; }
@@ -33,7 +50,8 @@ namespace NguGame.ViewModels
                 await ExecuteLoadQuestsCommand();
             });
 
-            this.TopScoreCmd = new Command(async () => {
+            this.TopScoreCmd = new Command(async () =>
+            {
                 await ExecuteLoadUsersCommand();
             });
         }
@@ -72,7 +90,6 @@ namespace NguGame.ViewModels
 
         private async Task ExecuteLoadUsersCommand()
         {
-            ObservableCollection<User> _luser = new ObservableCollection<User>();
             if (IsBusy)
                 return;
 
@@ -100,5 +117,7 @@ namespace NguGame.ViewModels
                 IsBusy = false;
             }
         }
+
+
     }
 }

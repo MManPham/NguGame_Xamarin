@@ -11,7 +11,10 @@
         .get(todoList.getAllUser)
         .post(todoList.insertUser)  
     
-     app.route('/user/:user_name').get(todoList.findUserByName);
+    app.route('/user/:user_name').get(todoList.findUserByName);
+    app.route('/userDevice/:user_device')
+        .get(todoList.findDevice)
+        .put(todoList.update_User);
         
         
     // app.route('/user')

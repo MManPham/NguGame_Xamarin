@@ -3,9 +3,6 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NguGame.Views.MainPage"
              >
-    <ContentPage.ToolbarItems >
-        <ToolbarItem  Text="Logout"/>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" 
                  Padding="30" 

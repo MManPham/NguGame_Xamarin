@@ -15,10 +15,12 @@
         Padding="20">
         <Label Text="BẢNG XẾP HẠNG" 
                TextColor="white" 
-               FontSize="25" 
-               HorizontalOptions="Center"/>
+               FontSize="27" 
+               HorizontalOptions="Center"
+               Margin="10"/>
         <ListView
             x:Name="listScore"
+            Margin="10"
             >
             <ListView.ItemTemplate>
                 <DataTemplate>
@@ -26,27 +28,29 @@
                         <Grid >
                             <Grid.ColumnDefinitions >
                                 <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="2*" />
                                 <ColumnDefinition Width="*" />
                             </Grid.ColumnDefinitions>
 
                             <Label
-                                Text="{Binding nameUser}" 
+                                Text="{Binding rank}" 
                                 TextColor="White"
-                                FontSize="17"
+                                FontSize="19"
+                                HorizontalOptions="Center"
                                 />
 
                             <Label
                                 Grid.Column="1"
-                                Text="{Binding score}" 
+                                Text="{Binding nameUser}" 
                                 TextColor="White"
                                 FontSize="17"/>
 
                             <Label
                                 Grid.Column="2"
-                                Text="{Binding nameDivice}" 
+                                Text="{Binding score}" 
                                 TextColor="White"
-                                FontSize="17"/>
+                                FontSize="17"
+                                 HorizontalOptions="Center"/>
 
                         </Grid>
                     </ViewCell>

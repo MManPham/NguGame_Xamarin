@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Xamarin.Essentials;
+using Rg.Plugins.Popup.Services;
 
 namespace NguGame.Views
 {
@@ -26,26 +27,29 @@ namespace NguGame.Views
 
         protected override void OnAppearing()
         {
+
             base.OnAppearing();
 
             Device.BeginInvokeOnMainThread(async () =>
             {
-                User test = new User("Minh Man", "0", DeviceInfo.Model.ToString());
-                User result;
 
                 User_MKStore userStore = new User_MKStore();
-                result = await userStore.GetUserAsync(test.nameUser);
+                User result = await userStore.CheckDeviceAsync(DeviceInfo.Model.ToString());
 
+                if(result==null)
+                {
+                     await PopupNavigation.Instance.PushAsync(new AddUserPopup());
+
+                }
             });
         }
 
 
         //About Click      
-        private async void Button_Clicked(object sender, EventArgs e)
+        private async  void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new About());
         }
-
 
         private async void AddQuestion_Clicked(object sender, EventArgs e)
         {

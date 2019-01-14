@@ -14,10 +14,10 @@ namespace NguGame.Models
 
         public ShowQuestion(List<string> resutl)
         {
-            answerA = "A. " + resutl[0];
-            answerB = "B. " + resutl[1];
-            answerC = "C. " + resutl[2];
-            answerD = "D. " + resutl[3];
+            answerA = resutl[0];
+            answerB =  resutl[1];
+            answerC = resutl[2];
+            answerD = resutl[3];
             title = null;
         }
     }

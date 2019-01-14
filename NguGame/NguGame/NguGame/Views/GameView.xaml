@@ -89,8 +89,9 @@
                        />
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Câu 1" FontSize="15"  FontAttributes="Bold" TextColor="black"/>
-                    <Label Text="/100"  
+                    <Label Text="Câu " FontSize="15"  FontAttributes="Bold" TextColor="black"/>
+                    <Label Text="{Binding NumbQuestPas}" FontSize="15"  FontAttributes="Bold" TextColor="black"/>
+                    <Label Text="/50"  
                        FontSize="15"
                        FontAttributes="Bold"
                            

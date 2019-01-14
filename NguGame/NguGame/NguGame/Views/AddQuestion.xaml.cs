@@ -1,4 +1,5 @@
-﻿using System;
+﻿using NguGame.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,10 +16,11 @@ namespace NguGame.Views
 		public AddQuestion ()
 		{
 			InitializeComponent ();
+            BindingContext = new AddQuestionVM();
 		}
-        private void Cmdbackhome_Clicked(object sender, EventArgs e)
+        private async void Cmdbackhome_Clicked(object sender, EventArgs e)
         {
-
+            await Navigation.PopToRootAsync();
         }
 
         private void Cmdsubmit_Clicked(object sender, EventArgs e)

@@ -8,6 +8,7 @@
     nameUser:String,
     score: Number,
     nameDivice:String,
+    rank:Number
   });
   
   const User = mongoose.model('User', user);

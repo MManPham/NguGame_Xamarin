@@ -18,7 +18,11 @@ namespace NguGame.Views
 		{
 			InitializeComponent ();
 
-            int counter = 0;
+
+            for (int i = 0; i < _luser.Count; i++)
+            {
+                _luser[i].rank = i +1;
+            }
 
             listScore.ItemsSource = _luser;
 

@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NguGame.DataAccess;
 using NguGame.Models;
 
 namespace NguGame.Services
@@ -20,9 +19,17 @@ namespace NguGame.Services
         }
 
 
-        public Task<bool> AddQuestionAsync(Question item)
+        public async Task<bool> AddQuestionAsync(Question item)
         {
-            throw new NotImplementedException();
+            try
+            {
+                await client.PostQuestion(this.URL, item);
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+            return true;
         }
 
         public Task<bool> DeleteQuestionAsync(string id)
