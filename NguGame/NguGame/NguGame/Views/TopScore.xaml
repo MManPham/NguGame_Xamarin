@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NguGame.Views.TopScore"
+             Title="Bảng xếp hạng">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+       
+    <StackLayout
+        Orientation="Vertical" 
+        BackgroundColor="DeepSkyBlue"
+        Padding="20">
+        <Label Text="BẢNG XẾP HẠNG" 
+               TextColor="white" 
+               FontSize="25" 
+               HorizontalOptions="Center"/>
+        <ListView
+            x:Name="listScore"
+            >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid >
+                            <Grid.ColumnDefinitions >
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label
+                                Text="{Binding nameUser}" 
+                                TextColor="White"
+                                FontSize="17"
+                                />
+
+                            <Label
+                                Grid.Column="1"
+                                Text="{Binding score}" 
+                                TextColor="White"
+                                FontSize="17"/>
+
+                            <Label
+                                Grid.Column="2"
+                                Text="{Binding nameDivice}" 
+                                TextColor="White"
+                                FontSize="17"/>
+
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

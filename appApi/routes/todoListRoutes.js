@@ -6,6 +6,12 @@
     app.route("/question")
         .get(todoList.getAllQuestion)
         .post(todoList.insertQuestion)  
+    
+    app.route("/user")
+        .get(todoList.getAllUser)
+        .post(todoList.insertUser)  
+    
+     app.route('/user/:user_name').get(todoList.findUserByName);
         
         
     // app.route('/user')

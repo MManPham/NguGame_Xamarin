@@ -10,6 +10,6 @@ namespace NguGame.Services
         Task<bool> AddQuestionAsync(T item);
         Task<bool> DeleteQuestionAsync(string id);
         Task<T> GetQuestionAsync(string id);
-        Task<IEnumerable<T>> GetAllQuestionsAsync(bool forceRefresh = false);
+        Task<List<T>> GetAllQuestionsAsync(bool forceRefresh = false);
     }
 }

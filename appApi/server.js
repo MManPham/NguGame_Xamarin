@@ -4,6 +4,8 @@ const mongoose = require("mongoose");
 const cors = require('cors')
 const bodyParser = require('body-parser');
 const  app = express();
+const http = require('http')
+const server = http.createServer(app)
 
 
 //use
@@ -22,6 +24,8 @@ mongoose.connection.once('open',function(){
 var routes = require('./routes/todoListRoutes'); //importing route
 routes(app); //register the route
 
-app.listen(3000);
-console.log('Server is running');
+server.listen(process.env.port ||3000,'192.168.100.25',()=>{
+    console.log('Server is running');
+    
+});
 

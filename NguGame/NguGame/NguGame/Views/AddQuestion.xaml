@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NguGame.Views.AddQuestion"
+             Title="Thêm câu hỏi vào game">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout Orientation="Vertical" HorizontalOptions="Start" VerticalOptions="Start">
+                <Label Text="Thêm câu hỏi" TextColor="Black" FontSize="16"/>
+                <Label  HorizontalTextAlignment="Start" TextColor="Black" FontSize="13">
+                    <Label.Text TextColor="Black" FontSize="12">
+                        Lưu ý:
+                1. Viết tiếng việt có dấu
+                2. Không dùng các từ ngữ thô tục
+                3. Không tạo các câu hỏi vô nghĩa, spam lung tung
+                4. Không nên đố lại những câu đã ra trong game
+                    </Label.Text>
+                </Label>
+                <Label Text="Nick-name của bạn?" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="author" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Label Text="Nhập nội dung câu đố" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="nameQuestion" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Label Text="Nhập đáp án Đúng" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="rightAnswer" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Label Text="Đáp án Sai-1" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="wrongAnswer1" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Label Text="Đáp án Sai-2" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="wrongAnswer2" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Label Text="Đáp án Sai-3" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="wrongAnswer3" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Label Text="Cần lời giải thích" FontSize="18" TextColor="Black"/>
+                <Entry x:Name="explain" Placeholder="Câu trả lời của bạn" FontSize="16" />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button x:Name="cmdsubmit" Text="Gửi câu hỏi" VerticalOptions="Start"
+                    HorizontalOptions="Start" Clicked="Cmdsubmit_Clicked" Grid.Column="0" Grid.Row="0"/>
+                    <Button x:Name="cmdbackhome" Text="Trở về" VerticalOptions="End"
+                    HorizontalOptions="End" Clicked="Cmdbackhome_Clicked" Grid.Column="1" Grid.Row="0"/>
+                </Grid>
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

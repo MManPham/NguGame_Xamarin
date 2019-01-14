@@ -1,13 +1,19 @@
-﻿using System;
+﻿using NguGame.Models;
+using NguGame.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Text;
+using Xamarin.Forms;
 
 namespace NguGame.ViewModels
 {
     public class BasicViewModel
     {
+        public IDataStore<Question> DataStore => DependencyService.Get<IDataStore<Question>>() ?? new MockDataStore() ;
+        public User_IdataStore <User> User_DataStore => DependencyService.Get<User_IdataStore<User>>() ?? new User_MKStore();
+
         bool isBusy = false;
         public bool IsBusy
         {

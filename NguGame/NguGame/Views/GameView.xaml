@@ -1,8 +1,7 @@
-﻿<?xaml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="NguGame.Views.GameView">
-
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="answerButton" TargetType="Button">
@@ -15,14 +14,12 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-
     <ContentPage.Content>
-        <Grid x:Name="controlGrid" RowSpacing="1" 
+            <Grid x:Name="controlGrid" RowSpacing="1" 
               ColumnSpacing="1" 
               BackgroundColor="DeepSkyBlue"
               Padding="5"
-              VerticalOptions="Center"
-              >
+              VerticalOptions="Center">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*" />
                 <RowDefinition Height="*" />
@@ -41,7 +38,7 @@
                          HorizontalOptions="Center"
                          
                          >
-                <Label FontAttributes="Bold" Text="{Binding Score}"  FontSize="35" x:Name="Point" TextColor="white"/>
+                <Label FontAttributes="Bold" Text="0"  FontSize="35" x:Name="Point" TextColor="white"/>
                 <Label Text="ĐIỂM" FontSize="35" FontAttributes="Bold" TextColor="white"/>
             </StackLayout>
             <StackLayout Orientation ="Horizontal"
@@ -49,7 +46,7 @@
                          HorizontalOptions="Center"
                          >
                 <Label FontAttributes="Bold" Text="Lượt có thể ngu: " FontSize="25" />
-                <Label Text="{Binding LuotNgu}" FontSize="25" FontAttributes=   "Bold" />
+                <Label Text="3" FontSize="25" FontAttributes=   "Bold" />
             </StackLayout>
 
             <StackLayout
@@ -60,8 +57,8 @@
                 BackgroundColor="#F9CC76"
                 Padding="10"
                 >
-                <Label Text="Câu 1:" FontSize="18"  FontAttributes="Bold" TextColor="black"/>
-                <Label Text="{Binding ShowQ.title}" 
+                <Label Text="Câu 1:" FontSize="17"  FontAttributes="Bold" TextColor="black"/>
+                <Label Text="I Love You có nghĩa là gì?" 
                    FontSize="18"
                    HorizontalTextAlignment="Start"
                    TextColor="Black"
@@ -82,7 +79,7 @@
                        FontAttributes="Bold"
                        />
 
-                    <Label Text="{Binding  currQuestion.author}"     x:Name="author"
+                    <Label Text="Admin" x:Name="author"
                        FontSize="15" 
                        FontAttributes="Bold"
                            TextColor="black"
@@ -97,29 +94,14 @@
                        />
                 </StackLayout>
             </StackLayout>
-            <Button Grid.Row="4" Grid.Column="0" 
-                    Text="{Binding ShowQ.answerA}"
-                    Style="{StaticResource answerButton}"
-                    x:Name="answerA"
-                    Clicked="AnswerA_Clicked"
-                    />
-            <Button Grid.Row="5" Grid.Column="0" Text="{Binding ShowQ.answerB}"
-                    Style="{StaticResource answerButton}"
-                    x:Name="answerB"
-                    Clicked="AnswerB_Clicked"
-                    />
-            <Button Grid.Row="4" Grid.Column="1" Text="{Binding ShowQ.answerC}"
-                    Style="{StaticResource answerButton}"
-                    x:Name="answerC"
-                    Clicked="AnswerC_Clicked"
-                    
-                    />
-            <Button Grid.Row="5" Grid.Column="1" Text="{Binding ShowQ.answerD} "
-                    Style="{StaticResource answerButton}"
-                    x:Name="answerD"
-                    Clicked="AnswerD_Clicked"
-
-                    
+            <Button Grid.Row="4" Grid.Column="0" Text="Tôi yêu bạn" FontSize="17"
+                    Style="{StaticResource answerButton}"/>
+            <Button Grid.Row="5" Grid.Column="0" Text="Tao yêu mày"
+                    Style="{StaticResource answerButton}"/>
+            <Button Grid.Row="4" Grid.Column="1" Text="Tớ yêu cậu"
+                    Style="{StaticResource answerButton}"/>
+            <Button Grid.Row="5" Grid.Column="1" Text="I love U"
+                    Style="{StaticResource answerButton}" 
                    />
         </Grid>
 

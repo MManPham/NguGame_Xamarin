@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NguGame.Views.GameOver"
+             BackgroundColor="DeepSkyBlue"
+             >
+    <ContentPage.ToolbarItems >
+        <ToolbarItem  Text="Logout"/>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" 
+                 Padding="20" 
+                 VerticalOptions="Center"
+                 Spacing="30"
+                >
+            <StackLayout >
+                <StackLayout BackgroundColor="#F9CC76" Padding="10">
+                    <Label Text="Bạn đã ngu hết thảy là 3 lần rồi :)) thoi chơi lại đi bạn ơi =))" 
+                        FontSize="20"
+                        HorizontalTextAlignment="Center"
+                        TextColor="Black"
+                          HeightRequest="120"
+                   />
+                </StackLayout>
+
+                <Image HorizontalOptions="Center"
+                   Source="smileyEmoticon.png"/>
+
+                <Button 
+                        BackgroundColor="Red"
+                        BorderRadius="30"
+                        Text="Làm lại ván mới nào >>"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        Command="{Binding MakeNewGame}"
+                    FontSize="20"
+                        />
+                <Button 
+                        BackgroundColor="Blue"
+                        BorderRadius="30"
+                        Text="menu game >>"
+                        TextColor="White"
+                        FontAttributes="Bold"
+                        FontSize="20"
+                        Command="{Binding MainPage}"
+                        />
+            </StackLayout>
+            <Label Text="Mẹo: đánh giá game này 5 sao để bọn mình làm game này tốt hơn nữa"
+                   TextColor="White"
+                   FontSize="20"
+                   HorizontalOptions="Center"
+                   Margin="20"
+                   />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

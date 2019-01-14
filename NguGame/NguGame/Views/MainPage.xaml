@@ -36,6 +36,7 @@
                     BorderRadius="30"
                     FontAttributes="Bold"
                     x:Name="playGame"
+                    Clicked="PlayGame_Clicked"  
                     />
                 <StackLayout Margin="20">
                 <Button
@@ -46,7 +47,7 @@
                     BackgroundColor="White"
                     BorderRadius="30"
                     FontAttributes="Bold"
-                    Clicked="Button_Clicked"   
+                    
                     />
                 <Button
                     Text="Bảng xếp hạng"
@@ -56,19 +57,17 @@
                     BackgroundColor="White"
                     BorderRadius="30"
                     FontAttributes="Bold"
-                    x:Name="TopScore"
+                    
                     />
 
                 <Button
                     Text="Thêm Câu Hỏi"
                     FontSize="Medium"
-                    Command="{Binding AddQuestion}" 
+                    Command="{Binding AboutCmd}" 
                     TextColor="OrangeRed"
                     BackgroundColor="White"
                     BorderRadius="30"
                     FontAttributes="Bold"
-                    x:Name="AddQuestion"
-                    Clicked="AddQuestion_Clicked"   
                     />
                 
             </StackLayout>

@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NguGame.Views.About">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" 
+                 Padding="30" 
+                 BackgroundColor="DeepSkyBlue"
+                >
+            <Label Text="HỎI NGU!" 
+                   FontSize="35"
+                   HorizontalTextAlignment="Center"
+                   TextColor="OrangeRed"
+                   />
+            <Image HorizontalOptions="Center"
+                   Source="smileyEmoticon.png"/>
+            <StackLayout VerticalOptions="CenterAndExpand" >
+                <Label
+                    HorizontalTextAlignment="Center" TextColor="Black" FontSize="18">
+                    <Label.Text>
+                        Game HỎI NGU là một game đố ngu vui nhộn opensource được thiết kế bởi Minh Mẫn, Nhật Thành, Hồng Phúc.
+Mọi người đều có thể đóng góp phát triển game này tại: https://github.com/MManPham/NguGame_Xamarin
+                    </Label.Text>
+                </Label>
+
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>  

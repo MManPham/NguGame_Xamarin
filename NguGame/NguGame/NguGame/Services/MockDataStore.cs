@@ -9,21 +9,14 @@ namespace NguGame.Services
 {
     public class MockDataStore : IDataStore<Question>
     {
-        List<Question> QuestionList;
+        public List<Question> QuestionList { get; set; }
+        public HttpRestQuestion client { get; set; }
+        public string URL { get; set; }
 
-        public MockDataStore()
+        public  MockDataStore()
         {
-            DataConnect _dataConnect = new  DataConnect();
-
-
-             QuestionList = new List<Question>();
-            var mockQuestions = _dataConnect.ListGoogleSheetValue();
-
-            foreach (var item in mockQuestions)
-            {
-                Question newQuestion = new Question(item);
-                QuestionList.Add(newQuestion);
-            }
+            client = new HttpRestQuestion();
+            URL = "http://192.168.100.25:3000/question";
         }
 
 
@@ -37,9 +30,10 @@ namespace NguGame.Services
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Question>> GetAllQuestionsAsync(bool forceRefresh = false)
+        public async Task<List<Question>> GetAllQuestionsAsync(bool forceRefresh = false)
         {
-            throw new NotImplementedException();
+            return await client.GetQuestions<Question>(this.URL);
+
         }
 
         public Task<Question> GetQuestionAsync(string id)
