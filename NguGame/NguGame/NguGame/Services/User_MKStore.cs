@@ -14,7 +14,7 @@ namespace NguGame.Services
         public User_MKStore()
         {
             client = new UserHttpRest();
-            URL = "http://172.20.10.5:3000";
+            URL = "http://192.168.100.41:3000";
         }
         public async Task<bool> AddUser(User item)
         {

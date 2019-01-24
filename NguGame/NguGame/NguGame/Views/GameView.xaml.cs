@@ -32,11 +32,16 @@ namespace NguGame.Views
             
             if (answerA.Text != ViewModel.currQuestion.rightAnswer)
             {
-                MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
-                if(ViewModel.LuotNgu>1)
+                if (ViewModel.LuotNgu > 1)
                 {
-                    await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                    bool checkCont = await DisplayAlert("Ngudấdf", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Tiếp nào", "Nghỉ dẹp");
+                    if (checkCont)
+                        MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
+                    else await Navigation.PopToRootAsync();
                 }
+                else MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
+
+
             }
             else
             {
@@ -53,10 +58,12 @@ namespace NguGame.Views
             {
                 if (ViewModel.LuotNgu > 1)
                 {
-                    await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                    bool checkCont = await DisplayAlert("Ngudấdf", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Tiếp nào", "Nghỉ dẹp");
+                    if (checkCont)
+                        MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
+                    else await Navigation.PopToRootAsync();
                 }
-                MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
-       
+                else MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
             }
             else
             {
@@ -72,10 +79,14 @@ namespace NguGame.Views
             {
                 if (ViewModel.LuotNgu > 1)
                 {
-                    await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                    bool checkCont = await DisplayAlert("Ngudấdf", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Tiếp nào", "Nghỉ dẹp");
+                    if (checkCont)
+                        MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
+                    else await Navigation.PopToRootAsync();
                 }
-                MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
-            
+                else MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
+
+
             }
             else
             {
@@ -91,10 +102,13 @@ namespace NguGame.Views
             {
                 if (ViewModel.LuotNgu > 1)
                 {
-                    await DisplayAlert("Ngu", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Chơi tiếp");
+                    bool checkCont =  await DisplayAlert("Ngudấdf", "Bạn đã chọn câu trả lời thật ngu người :) Tiếp tục để ngu tiếp nào", "Tiếp nào", "Nghỉ dẹp");
+                    if (checkCont)
+                        MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
+                    else await Navigation.PopToRootAsync();
                 }
-                MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
-         
+                else MessagingCenter.Send(this, "WrongAnswer", answerA.Text);
+
             }
             else
             {

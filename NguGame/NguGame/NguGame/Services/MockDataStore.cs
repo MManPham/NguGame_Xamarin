@@ -15,7 +15,7 @@ namespace NguGame.Services
         public  MockDataStore()
         {
             client = new HttpRestQuestion();
-            URL = "http://172.20.10.5:3000/question";
+            URL = "http://192.168.100.41:3000/question";
         }
 
 

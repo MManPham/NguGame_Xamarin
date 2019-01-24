@@ -24,7 +24,7 @@ mongoose.connection.once('open',function(){
 var routes = require('./routes/todoListRoutes'); //importing route
 routes(app); //register the route
 
-server.listen(process.env.port ||3000,'172.20.10.5',()=>{
+server.listen(process.env.port ||3000,'192.168.100.41',()=>{
     console.log('Server is running');
     
 });
