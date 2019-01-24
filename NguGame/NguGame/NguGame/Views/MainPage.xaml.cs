@@ -34,13 +34,17 @@ namespace NguGame.Views
             {
 
                 User_MKStore userStore = new User_MKStore();
-                User result = await userStore.CheckDeviceAsync(DeviceInfo.Model.ToString());
-
-                if(result==null)
+                try
                 {
-                     await PopupNavigation.Instance.PushAsync(new AddUserPopup());
+                    User result = await userStore.CheckDeviceAsync(DeviceInfo.Model.ToString());
+                }
+                catch (Exception)
+                {
+                    await PopupNavigation.Instance.PushAsync(new AddUserPopup());
 
                 }
+
+
             });
         }
 

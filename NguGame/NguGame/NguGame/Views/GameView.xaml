@@ -60,7 +60,10 @@
                 BackgroundColor="#F9CC76"
                 Padding="10"
                 >
-                <Label Text="Câu 1:" FontSize="18"  FontAttributes="Bold" TextColor="black"/>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Câu " FontSize="18"  FontAttributes="Bold" TextColor="black"/>
+                    <Label Text="{Binding NumbQuestPas}" FontSize="18"  FontAttributes="Bold" TextColor="black"/>
+                </StackLayout>
                 <Label Text="{Binding ShowQ.title}" 
                    FontSize="18"
                    HorizontalTextAlignment="Start"
